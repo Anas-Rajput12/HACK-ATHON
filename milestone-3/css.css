@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-element {
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+textarea.form-input {
+    resize: vertical;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+#resume {
+    margin-top: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+#display-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit:contain;
+    box-shadow: 0 4px 6px rgba(96, 165, 250, 0.5), 0 1px 3px rgba(96, 165, 250, 0.5);
+}
+
+#personal-info ul,
+#educationList,
+#skillsList,
+#workList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#personal-info li {
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #007BFF;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.toggle-btn:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .button {
+        width: 100%;
+        padding: 12px;
+    }
+}
