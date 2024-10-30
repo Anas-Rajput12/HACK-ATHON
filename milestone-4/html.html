@@ -28,6 +28,9 @@
             <label for="address" class="form-element">Address:</label>
             <textarea id="address" name="address" class="form-input" required></textarea>
 
+            <label for="about" class="form-element">About Me:</label>
+            <textarea id="about" name="about" class="form-input" required></textarea>
+
             <label for="photo" class="form-element">Upload Photo:</label>
             <input type="file" id="photo" name="photo" accept="image/*" class="form-input">
 
@@ -41,43 +44,46 @@
             <textarea id="experience" name="experience" rows="3" class="form-input" required></textarea>
 
             <button type="submit" class="button">Generate CV</button>
-            <p>Please scroll down to get Your Generated CV.</p>
 
         </form>
     </div>
 
-    <div class="container" id="resume" style="display:none;">
-        <header>
-            <img id="display-photo" alt="">
-        </header>
+    <div id="resume" style="display:none;">
+        <div id="section1">
+            <header>
+                <img id="display-photo" alt="">
+            </header>
+    
+            <section id="personal-info">
+                <ul>
+                    <li><span id="display-name" contenteditable="true"></span></li><br>
+                    <li><b>About Me: </b><br><span id="display-about" contenteditable="true"></span></li><br> <!-- About Me Section -->
+                    <li><b>Date of Birth: </b><span id="display-dob" contenteditable="true"></span></li><br>
+                    <li><b>Phone: </b><br><span id="display-phone" contenteditable="true"></span></li><br>
+                    <li><b>Email: </b><br><span id="display-email" contenteditable="true"></span></li><br>
+                    <li><b>Address: </b><br><span id="display-address" contenteditable="true"></span></li>
+                </ul>
+            </section>
+        </div>
 
-        <section id="personal-info" data-editable="personal-info">
-            <h2>Personal Information</h2>
-            <ul>
-                <li><b>Name: </b><span id="display-name" contenteditable="true"></span></li>
-                <li><b>Date of Birth: </b><span id="display-dob" contenteditable="true"></span></li>
-                <li><b>Email: </b><span id="display-email" contenteditable="true"></span></li>
-                <li><b>Phone: </b><span id="display-phone" contenteditable="true"></span></li>
-                <li><b>Address: </b><span id="display-address" contenteditable="true"></span></li>
-            </ul>
-        </section>
+        <div id="section2">
+            <section id="display-education">
+                <h2>Education <button class="toggle-btn" id="toggle-education">-</button></h2>
+                <ul id="educationList" contenteditable="true"></ul>
+            </section>
+    
+            <section id="display-skills">
+                <h2>Skills <button class="toggle-btn" id="toggle-skills">-</button></h2>
+                <ul id="skillsList" contenteditable="true"></ul>
+            </section>
+    
+            <section id="display-experience">
+                <h2>Work Experience <button class="toggle-btn" id="toggle-work">-</button></h2>
+                <ul id="workList" contenteditable="true"></ul>
+            </section>
+        </div>
 
-        <section id="display-education" data-editable="education">
-            <h2>Education <button class="toggle-btn" id="toggle-education">-</button></h2>
-            <ul id="educationList" contenteditable="true"></ul>
-        </section>
-
-        <section id="display-skills" data-editable="skills">
-            <h2>Skills <button class="toggle-btn" id="toggle-skills">-</button></h2>
-            <ul id="skillsList" contenteditable="true"></ul>
-        </section>
-
-        <section id="display-experience" data-editable="experience">
-            <h2>Work Experience <button class="toggle-btn" id="toggle-work">-</button></h2>
-            <ul id="workList" contenteditable="true"></ul>
-        </section>
-
-        <button type="submit" class="button" id="regenrate-cv">Generate New</button>
+        <button type="submit" class="button" id="regenerate-cv">Generate New</button>
     </div>
 
     <script src="./script.js"></script>
