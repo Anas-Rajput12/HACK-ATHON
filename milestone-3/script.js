@@ -1,74 +1,55 @@
-var form = document.getElementById('resume-form');
-var resume = document.getElementById('resume');
-var resumeFromSection = document.getElementById('resume-from-section');
-var nameField = document.getElementById('name');
-var dobField = document.getElementById('dob');
-var emailField = document.getElementById('email');
-var phoneField = document.getElementById('phone');
-var addressField = document.getElementById('address');
-var photoField = document.getElementById('photo');
-var displayphoto = document.getElementById('display-photo');
-var displayname = document.getElementById('display-name');
-var displaydob = document.getElementById('display-dob');
-var displayemail = document.getElementById('display-email');
-var displayphone = document.getElementById('display-phone');
-var displayaddress = document.getElementById('display-address');
-var educationField = document.getElementById('education');
-var skillsField = document.getElementById('skills');
-var experienceField = document.getElementById('experience');
-var educationList = document.getElementById('educationList');
-var skillsList = document.getElementById('skillsList');
-var workList = document.getElementById('workList');
-form.addEventListener('submit', function (event) {
-    var _a;
+document.getElementById('resume-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    displayname.textContent = nameField.value;
-    displaydob.textContent = dobField.value;
-    displayemail.textContent = emailField.value;
-    displayphone.textContent = phoneField.value;
-    displayaddress.textContent = addressField.value;
-    var photoFile = (_a = photoField.files) === null || _a === void 0 ? void 0 : _a[0];
-    if (photoFile) {
-        var reader_1 = new FileReader();
-        reader_1.onload = function () {
-            displayphoto.src = reader_1.result;
+
+    // Collect form data
+    const name = document.getElementById('name').value;
+    const dob = document.getElementById('dob').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const about = document.getElementById('about').value;
+    const education = document.getElementById('education').value.split('\n');
+    const skills = document.getElementById('skills').value.split(',');
+    const experience = document.getElementById('experience').value.split('\n');
+    const photo = document.getElementById('photo').files[0];
+
+    // Display data in resume
+    document.getElementById('display-name').textContent = name;
+    document.getElementById('display-dob').textContent = dob;
+    document.getElementById('display-email').textContent = email;
+    document.getElementById('display-phone').textContent = phone;
+    document.getElementById('display-address').textContent = address;
+    document.getElementById('display-about').textContent = about;
+
+    // Populate education
+    const educationList = document.getElementById('educationList');
+    educationList.innerHTML = education.map(item => `<li>${item}</li>`).join('');
+
+    // Populate skills
+    const skillsList = document.getElementById('skillsList');
+    skillsList.innerHTML = skills.map(item => `<li>${item.trim()}</li>`).join('');
+
+    // Populate experience
+    const workList = document.getElementById('workList');
+    workList.innerHTML = experience.map(item => `<li>${item}</li>`).join('');
+
+    // Handle photo display
+    if (photo) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('display-photo').src = e.target.result;
         };
-        reader_1.readAsDataURL(photoFile);
+        reader.readAsDataURL(photo);
     }
-    else {
-        displayphoto.src = '';
-    }
-    educationList.innerHTML = '';
-    var educationItems = educationField.value.split('\n').filter(function (item) { return item.trim() !== ''; });
-    educationItems.forEach(function (item) {
-        var li = document.createElement('li');
-        li.textContent = item;
-        educationList.appendChild(li);
-    });
-    skillsList.innerHTML = '';
-    var skillsItems = skillsField.value.split(',').map(function (skill) { return skill.trim(); }).filter(function (skill) { return skill !== ''; });
-    skillsItems.forEach(function (item) {
-        var li = document.createElement('li');
-        li.textContent = item;
-        skillsList.appendChild(li);
-    });
-    workList.innerHTML = '';
-    var experienceItems = experienceField.value.split('\n').filter(function (item) { return item.trim() !== ''; });
-    experienceItems.forEach(function (item) {
-        var li = document.createElement('li');
-        li.textContent = item;
-        workList.appendChild(li);
-    });
-    resumeFromSection.style.display = 'none';
-    resume.style.display = 'block';
+
+    // Show the resume section and hide the form
+    document.getElementById('resume').style.display = 'block';
+    document.getElementById('resume-form-section').style.display = 'none';
 });
-var regeneratebutton = document.getElementById('regenrate-cv');
-regeneratebutton.addEventListener('click', function () {
-    resumeFromSection.style.display = 'block';
-    resume.style.display = 'none';
-    form.reset();
-    displayphoto.src = '';
-    educationList.innerHTML = '';
-    skillsList.innerHTML = '';
-    workList.innerHTML = '';
+
+// Add functionality for regenerating the CV
+document.getElementById('regenerate-cv').addEventListener('click', function() {
+    document.getElementById('resume').style.display = 'none';
+    document.getElementById('resume-form-section').style.display = 'block';
+    document.getElementById('resume-form').reset();
 });
