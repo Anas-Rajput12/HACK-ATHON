@@ -9,13 +9,12 @@
 </head>
 
 <body>
-    <div class="container" id="resume-from-section">
+    <div class="container" id="resume-form-section">
         <h2>Build Your Resume</h2>
         <form id="resume-form">
 
             <label for="name" class="form-element">Full Name:</label>
             <input type="text" id="name" name="name" class="form-input" required>
-
 
             <label for="dob" class="form-element">DOB:</label>
             <input type="date" id="dob" name="dob" class="form-input" min="1960-01-01" required>
@@ -28,6 +27,9 @@
 
             <label for="address" class="form-element">Address:</label>
             <textarea id="address" name="address" class="form-input" required></textarea>
+
+            <label for="about" class="form-element">About Me:</label>
+            <textarea id="about" name="about" class="form-input" required></textarea>
 
             <label for="photo" class="form-element">Upload Photo:</label>
             <input type="file" id="photo" name="photo" accept="image/*" class="form-input">
@@ -46,38 +48,42 @@
         </form>
     </div>
 
-    <div class="container" id="resume" style="display:none;">
-        <header>
-            <img id="display-photo" alt="">
-        </header>
+    <div  id="resume" style="display:none;">
+        <div id="section1">
+            <header>
+                <img id="display-photo" alt="">
+            </header>
+    
+            <section id="personal-info">
+                <ul>
+                    <li><span id="display-name"></span></li><br>
+                    <li><b>About Me: </b><br><span id="display-about"></span></li><br>
+                    <li><b>Date of Birth: </b><span id="display-dob"></span></li><br>
+                    <li><b>Phone: </b><br><span id="display-phone"></span></li><br>
+                    <li><b>Email: </b><br><span id="display-email"></span></li><br>
+                    <li><b>Address: </b><br><span id="display-address"></span></li>
+                </ul>
+            </section>
+        </div>
 
-        <section id="personal-info">
-            <h2>Personal Information</h2>
-            <ul>
-                <li><b>Name: </b><span id="display-name"></span></li>
-                <li><b>Date of Birth: </b><span id="display-dob"></span></li>
-                <li><b>Email: </b><span id="display-email"></span></li>
-                <li><b>Phone: </b><span id="display-phone"></span></li>
-                <li><b>Address: </b><span id="display-address"></span></li>
-            </ul>
-        </section>
+        <div id="section2">
+            <section id="display-education">
+                <h2>Education <button class="toggle-btn" id="toggle-education">-</button></h2>
+                <ul id="educationList"></ul>
+            </section>
+    
+            <section id="display-skills">
+                <h2>Skills <button class="toggle-btn" id="toggle-skills" >-</button></h2>
+                <ul id="skillsList"></ul>
+            </section>
+    
+            <section id="display-experience">
+                <h2>Work Experience <button class="toggle-btn" id="toggle-work">-</button></h2>
+                <ul id="workList"></ul>
+            </section>
+        </div>
 
-        <section id="display-education">
-            <h2>Education <button class="toggle-btn" id="toggle-education">-</button></h2>
-            <ul id="educationList"></ul>
-        </section>
-
-        <section id="display-skills">
-            <h2>Skills <button class="toggle-btn" id="toggle-skills">-</button></h2>
-            <ul id="skillsList"></ul>
-        </section>
-
-        <section id="display-experience">
-            <h2>Work Experience <button class="toggle-btn" id="toggle-work">-</button></h2>
-            <ul id="workList"></ul>
-        </section>
-
-        <button type="submit" class="button" id="regenrate-cv">Generate New</button>
+        <button type="submit" class="button" id="regenerate-cv">Generate New</button>
     </div>
 
     <script src="./script.js"></script>
