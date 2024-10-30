@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Resume</title>
     <link rel="stylesheet" href="css.css">
 </head>
+
 <body>
-    <header id="intro">
-        <img src="public/profile.jpg" alt="Profile Picture" class="profile-picture">
-        <h1>Muhammad Anas Qadri</h1>
-        <p>Contact Details: 
-            <a href="mailto:muhammadanasqadri2@gmail.com">muhammadanasqadri2@gmail.com</a> | +92 3164583774
-        </p>
-        
-    </header>
-    
-
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li><strong>Currently enorlled in GIAIC initiative (2nd Quarter), Governor House</strong></li>
-            <li><strong>Degree:</strong>Undergraduate of Bachelor Science in Information Technology</li>
-            <li><strong>Institution:</strong>QUAID-E-AWAM UNIVERSITY
-                OF ENGINEERING, SCIENCE & TECHNOLOGY
-                NAWABSHAH, SINDH, PAKISTAN</li>
-            <li><strong>Fsc:</strong>Govt: Degree college Nawabshah</li>
-        </ul>
-    </section>
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>TypeScript</li>
-            <li>C, C++,c#</li>
-            <li>Python</li>
-            <li>React, Node.js, Nextjs</li>
-        </ul>
-    </section>
-
-    <section id="experience">
-        <h2>Work Experience</h2>
-        <p>Two Month Internship Web Development</p>
-    </section>
+    <div id="section">
+        <div id="section1">
+            <section id="intro">
+                <img src="public/profile.jpg" alt="Profile Picture" class="profile-picture">
+            <h3>Muhammad Anas Qadri</h3>
+            <h4>About Me</h4>
+            <p>I’m a final-year Information Technology student enrolled in a Generative AI and Web 3.0 course at GIAIC.
+                Passionate about AI and decentralized technologies, I’m eager to apply my knowledge to real-world
+                projects and contribute to this evolving field.</p>
+            <h4>Contact</h4>
+            <h4>Phone Number <br> +92 3164583774</h4>
+            <h4>E-mail Address<br><a href="mailto:muhammadanasqadri2@gmail.com">muhammadanasqadri2@gmail.com</a></h4>
+ 
+            </section>    
+        </div>
+        <div id="section2">
+            <section id="skills">
+                <h3>Skills</h3>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>TypeScript</li>
+                <li>C, C++,c#</li>
+                <li>Python</li>
+                <li>React, Node.js, Nextjs</li>
+            </ul>
+            </section>
+            <section id="experience">
+                <h3 id="a">Experience</h3>
+            <li id="li">Two Month Internship Web Development</li>
+            </section>
+            <section id="education">
+                <h3 id="b">Education</h3>
+            <ul>
+                <li><strong>Currently enorlled in GIAIC initiative (2nd Quarter), Governor House</strong></li>
+                <li><strong>Degree:</strong>Undergraduate of Bachelor Science in Information Technology</li>
+                <li><strong>Institution:</strong>QUAID-E-AWAM UNIVERSITY
+                    OF ENGINEERING, SCIENCE & TECHNOLOGY
+                    NAWABSHAH, SINDH, PAKISTAN</li>
+                <li><strong>Fsc:</strong>Govt: Degree college Nawabshah</li>
+            </ul>
+            </section>
+        </div>
+    </div>
 
     <button id="toggle-skills">Toggle Skills</button>
 
     <script src="script.js"></script>
 </body>
+
 </html>
