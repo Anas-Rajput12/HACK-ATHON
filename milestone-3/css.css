@@ -69,7 +69,7 @@ textarea {
     color: white; /* Text color */
     width: 35%; /* Set width to 35% */
     min-height: 100vh; /* Fill viewport height */
-    /* padding: 20px; Padding for spacing */
+    padding: 20px; /* Padding for spacing */
 }
 
 #section2 {
