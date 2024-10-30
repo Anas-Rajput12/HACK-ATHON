@@ -1,114 +1,117 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
-    width: 80%;
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 600px; /* Limit the width for better readability */
+    margin: auto; /* Center the container */
+    background-color:gray;
     padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 h2 {
+    text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
-
 .form-element {
-    margin-top: 10px;
-    display: block;
+    margin-bottom: 10px; /* Space between elements */
     font-weight: bold;
 }
 
 .form-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    width: 98%; /* Full width */
+    padding: 10px; /* Padding for comfort */
+    margin-bottom: 20px; /* Space below each input */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    transition: border-color 0.3s; /* Smooth transition */
 }
 
-textarea.form-input {
-    resize: vertical;
+.form-input:focus {
+    border-color: #0e4086; /* Change border color on focus */
+    outline: none; /* Remove default outline */
 }
 
 .button {
-    display: inline-block;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    margin-top: 20px;
+    background-color: #0e4086; /* Button color */
+    color: white; /* Button text color */
+    padding: 10px; /* Padding inside button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    width: 100%; /* Full width */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #0b2e5b; /* Darker shade on hover */
 }
 
-#resume {
-    margin-top: 20px;
+textarea {
+    resize: vertical; /* Allow vertical resizing only */
 }
 
-header {
-    text-align: center;
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px; /* Adjust padding on smaller screens */
+    }
+
+    .form-input, .button {
+        font-size: 14px; /* Slightly smaller font */
+    }
 }
 
-#display-photo {
+.container #resume{
+    display: flex; /* Use flexbox for layout */
+}
+
+#section1 {
+    background-color: #0e4086; /* Example background color */
+    color: white; /* Text color */
+    width: 35%; /* Set width to 35% */
+    min-height: 100vh; /* Fill viewport height */
+    padding: 20px; /* Padding for spacing */
+}
+
+#section2 {
+    background-color: white; /* Example background color */
+    color: black; /* Text color */
+    width: 65%; /* Set width to 65% */
+    min-height: 100vh; /* Fill viewport height */
+    padding: 26px; /* Padding for spacing */
+    margin-top: -55.19%;
+    margin-left: 35%;
+}
+#resume img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    object-fit:contain;
-    box-shadow: 0 4px 6px rgba(96, 165, 250, 0.5), 0 1px 3px rgba(96, 165, 250, 0.5);
+    object-fit: contain;
+    background-color: white;
+    margin-top: 7%;
+    margin-left: 20%;
 }
 
-#personal-info ul,
-#educationList,
-#skillsList,
-#workList {
-    list-style-type: none;
-    padding: 0;
+#section1 ul li{
+    list-style: none;
+    margin: 0 auto;
+    width: 75%;
+    margin-left: 10%;
 }
-
-#personal-info li {
-    margin-bottom: 10px;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-.toggle-btn {
-    background: none;
-    border: none;
-    color: #007BFF;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 0;
+#section2 h2{
+    background-color: #0e4086;
+    color: #f4f4f4;
+    padding: 10px;
     margin-left: 10px;
 }
 
-.toggle-btn:hover {
-    text-decoration: underline;
-}
 
-/* Responsive Styles */
-@media (max-width: 600px) {
-    .container {
-        width: 95%;
-        padding: 10px;
-    }
 
-    .button {
-        width: 100%;
-        padding: 12px;
-    }
-}
+
