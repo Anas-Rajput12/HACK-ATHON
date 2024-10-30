@@ -6,6 +6,7 @@ var dobField = document.getElementById('dob');
 var emailField = document.getElementById('email');
 var phoneField = document.getElementById('phone');
 var addressField = document.getElementById('address');
+var aboutField = document.getElementById('about'); // New About Me field
 var photoField = document.getElementById('photo');
 var displayPhoto = document.getElementById('display-photo');
 var displayName = document.getElementById('display-name');
@@ -13,56 +14,67 @@ var displayDob = document.getElementById('display-dob');
 var displayEmail = document.getElementById('display-email');
 var displayPhone = document.getElementById('display-phone');
 var displayAddress = document.getElementById('display-address');
+var displayAbout = document.getElementById('display-about'); // Display About Me section
 var educationField = document.getElementById('education');
 var skillsField = document.getElementById('skills');
 var experienceField = document.getElementById('experience');
 var educationList = document.getElementById('educationList');
 var skillsList = document.getElementById('skillsList');
 var workList = document.getElementById('workList');
+
 form.addEventListener('submit', function (event) {
-    var _a;
     event.preventDefault();
+    
     displayName.textContent = nameField.value;
     displayDob.textContent = dobField.value;
     displayEmail.textContent = emailField.value;
     displayPhone.textContent = phoneField.value;
     displayAddress.textContent = addressField.value;
-    var photoFile = (_a = photoField.files) === null || _a === void 0 ? void 0 : _a[0];
+    displayAbout.textContent = aboutField.value; // Display About Me content
+
+    var photoFile = photoField.files[0];
     if (photoFile) {
-        var reader_1 = new FileReader();
-        reader_1.onload = function () {
-            displayPhoto.src = reader_1.result;
+        var reader = new FileReader();
+        reader.onload = function () {
+            displayPhoto.src = reader.result;
         };
-        reader_1.readAsDataURL(photoFile);
-    }
-    else {
+        reader.readAsDataURL(photoFile);
+    } else {
         displayPhoto.src = '';
     }
+
+    // Handle education
     educationList.innerHTML = '';
-    var educationItems = educationField.value.split('\n').filter(function (item) { return item.trim() !== ''; });
-    educationItems.forEach(function (item) {
+    var educationItems = educationField.value.split('\n').filter(item => item.trim() !== '');
+    educationItems.forEach(item => {
         var li = document.createElement('li');
         li.textContent = item;
         educationList.appendChild(li);
     });
+
+    // Handle skills
     skillsList.innerHTML = '';
-    var skillsItems = skillsField.value.split(',').map(function (skill) { return skill.trim(); }).filter(function (skill) { return skill !== ''; });
-    skillsItems.forEach(function (item) {
+    var skillsItems = skillsField.value.split(',').map(skill => skill.trim()).filter(skill => skill !== '');
+    skillsItems.forEach(item => {
         var li = document.createElement('li');
         li.textContent = item;
         skillsList.appendChild(li);
     });
+
+    // Handle work experience
     workList.innerHTML = '';
-    var experienceItems = experienceField.value.split('\n').filter(function (item) { return item.trim() !== ''; });
-    experienceItems.forEach(function (item) {
+    var experienceItems = experienceField.value.split('\n').filter(item => item.trim() !== '');
+    experienceItems.forEach(item => {
         var li = document.createElement('li');
         li.textContent = item;
         workList.appendChild(li);
     });
+
     resumeFromSection.style.display = 'none';
     resumeSection.style.display = 'block';
 });
-var regenerateButton = document.getElementById('regenrate-cv');
+
+var regenerateButton = document.getElementById('regenerate-cv');
 regenerateButton.addEventListener('click', function () {
     resumeFromSection.style.display = 'block';
     resumeSection.style.display = 'none';
@@ -71,24 +83,5 @@ regenerateButton.addEventListener('click', function () {
     educationList.innerHTML = '';
     skillsList.innerHTML = '';
     workList.innerHTML = '';
-});
-document.querySelectorAll('[contenteditable]').forEach(function (element) {
-    element.addEventListener('blur', function (event) {
-        var target = event.target;
-        if (target.id === 'display-name') {
-            nameField.value = target.textContent || '';
-        }
-        else if (target.id === 'display-dob') {
-            dobField.value = target.textContent || '';
-        }
-        else if (target.id === 'display-email') {
-            emailField.value = target.textContent || '';
-        }
-        else if (target.id === 'display-phone') {
-            phoneField.value = target.textContent || '';
-        }
-        else if (target.id === 'display-address') {
-            addressField.value = target.textContent || '';
-        }
-    });
+    displayAbout.textContent = ''; // Reset About Me display
 });
