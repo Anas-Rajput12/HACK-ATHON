@@ -76,7 +76,7 @@ textarea {
     color: black; /* Text color */
     width: 65%; /* Set width to 65% */
     min-height: 100vh; /* Fill viewport height */
-    margin-top: -54.3%;
+    margin-top: -50%;
     margin-left: 32%;
     padding: 20px; /* Padding for spacing */
 }
