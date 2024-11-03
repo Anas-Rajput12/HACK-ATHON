@@ -3,20 +3,25 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
+    font-size: 16px; /* Base font size for readability */
 }
 
 .container {
-    max-width: 600px; /* Limit the width for better readability */
+    max-width: 100%; /* Limit the width for better readability */
     margin: auto; /* Center the container */
-    background-color: gray;
+    background-color: #f4f4f4;
+    color: black;
+    font-weight: bold;
     padding: 20px;
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: black; /* Soft shadow */
 }
 
 h2 {
     text-align: center;
-    color: #333;
+    color: #020202;
+    font-weight: bold;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
@@ -39,6 +44,10 @@ h2 {
     outline: none; /* Remove default outline */
 }
 
+.form-input:hover {
+    border-color: #0e4086; /* Highlight on hover */
+}
+
 .button {
     background-color: #0e4086; /* Button color */
     color: white; /* Button text color */
@@ -54,8 +63,17 @@ h2 {
     background-color: #0b2e5b; /* Darker shade on hover */
 }
 
+.button:active {
+    background-color: #0a2c4f; /* Even darker shade on click */
+}
+
 textarea {
     resize: vertical; /* Allow vertical resizing only */
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+textarea:focus {
+    border-color: #0e4086; /* Change border color on focus */
 }
 
 /* Layout for Resume Section */
